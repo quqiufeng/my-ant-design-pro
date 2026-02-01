@@ -2,6 +2,17 @@
 
 This project is initialized with [Ant Design Pro](https://pro.ant.design). Follow is the quick guide for how to use.
 
+## Database Setup
+
+1. Copy `.env.example` to `.env`
+2. Fill in your database credentials in `.env`:
+   - `DB_USER`: 数据库用户名
+   - `DB_PASSWORD`: 数据库密码
+3. Import the SQL file to create tables:
+   ```bash
+   mysql -u用户名 -p密码 project < sql/project.sql
+   ```
+
 ## Environment Prepare
 
 Install `node_modules`:
