@@ -11,7 +11,9 @@ This project is initialized with [Ant Design Pro](https://pro.ant.design). Follo
 
 **All code in this project is developed using OpenCode with the MiniMax 2.1 LLM.**
 
-本项目中所有代码均由 OpenCode 使用 MiniMax 2.1 大模型开发。
+本项目中所有代码均由 OpenCode 使用 MiniMax 2.1 大模型开发。 没有手写代码！！！
+
+<img width="2560" height="1251" alt="image" src="https://github.com/user-attachments/assets/62092953-4224-47b2-a294-0df5651c8cd6" />
 
 ---
 
