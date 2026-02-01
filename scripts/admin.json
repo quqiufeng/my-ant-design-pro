@@ -1,0 +1,24 @@
+{
+  "path": "/admin/admin-list",
+  "table": "admin",
+  "search_field": [
+    "username",
+    "phone",
+    {
+      "field": "role_id",
+      "type": "select",
+      "api": "/api/role",
+      "displayField": "name",
+      "valueField": "id"
+    }
+  ],
+  "list_field": [
+    "id",
+    "username",
+    "phone",
+    "role_id",
+    "left join role on role_id=id display name as role_name"
+  ],
+  "create_field": ["username","password","phone","role_id"],
+  "update_field": ["username","password","phone","role_id"]
+}

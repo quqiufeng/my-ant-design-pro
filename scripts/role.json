@@ -1,0 +1,13 @@
+{
+  "path": "/admin/role",
+  "table": "role",
+  "search_field": [
+    "name"
+  ],
+  "list_field": [
+    "id",
+    "name"
+  ],
+  "create_field": ["name"],
+  "update_field": ["name"]
+}

@@ -1,0 +1,17 @@
+{
+  "theme": {
+    "name": "Custom",
+    "colors": {
+      "activityBar.background": "#2D2A2E",
+      "activityBar.foreground": "#FCFCFA",
+      "editor.background": "#1D2C4C",
+      "editor.foreground": "#FCFCFA",
+      "sideBar.background": "#2D2A2E",
+      "sideBar.foreground": "#FCFCFA",
+      "statusBar.background": "#4D4D4D",
+      "statusBar.foreground": "#FCFCFA",
+      "titleBar.background": "#2D2A2E",
+      "titleBar.foreground": "#FCFCFA"
+    }
+  }
+}

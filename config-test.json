@@ -1,0 +1,13 @@
+{
+  "table": "admin",
+  "search_field": ["id", "username", "phone", "login_time", "role_id"],
+  "list_field": [
+    "id",
+    "username",
+    "phone",
+    "login_time",
+    "left join role on role_id=id display name as role_name"
+  ],
+  "create_field": ["username", "phone", "role_id", "password"],
+  "update_field": ["username", "phone", "role_id", "password"]
+}
