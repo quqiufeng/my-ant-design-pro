@@ -39,5 +39,6 @@ screenshot
 
 build
 
-# PHP backend (symlink, not committed)
-php
+# PHP
+php/*.log
+php/writable/
