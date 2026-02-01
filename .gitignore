@@ -41,3 +41,6 @@ build
 
 # Config files
 conf/*.default
+
+# Environment
+.env
