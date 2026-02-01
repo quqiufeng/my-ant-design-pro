@@ -5,6 +5,16 @@ This project is initialized with [Ant Design Pro](https://pro.ant.design). Follo
 
 ---
 
+## About / 关于本项目
+
+### EN
+
+**All code in this project is developed using OpenCode with the MiniMax 2.1 LLM.**
+
+本项目中所有代码均由 OpenCode 使用 MiniMax 2.1 大模型开发。
+
+---
+
 ## Database Setup / 数据库设置
 
 ### EN
@@ -135,6 +145,32 @@ Ant Design Pro provides some useful script to help you quick start and build wit
 
 Scripts provided in `package.json`. It's safe to modify or add additional script:
 
+#### Generate CRUD Code
+
+Generate Ant Design Pro table pages with backend API from database schema:
+
+```bash
+node scripts/generate-crud.js
+```
+
+This script generates:
+- Frontend: ProTable page, search form, create/update forms
+- Backend: CodeIgniter controller with CRUD API
+
+**Configuration:** Edit `scripts/admin.json` or create your own config file.
+
+#### Generate Routes from Database
+
+Read menu data from database and generate `config/routes.ts`:
+
+```bash
+node scripts/generate-routes.js
+```
+
+**Requirements:**
+- Configure database connection in `.env`
+- Menu data stored in `system_menu` table
+
 #### Start project
 
 ```bash
@@ -170,6 +206,32 @@ npm test
 Ant Design Pro 提供了一些有用的脚本，帮助你快速启动、构建项目，检查代码风格和运行测试。
 
 脚本定义在 `package.json` 中，可以安全地修改或添加自定义脚本：
+
+#### 生成 CRUD 代码
+
+根据数据库表结构自动生成 Ant Design Pro 表格页面和后端 API：
+
+```bash
+node scripts/generate-crud.js
+```
+
+此脚本会生成：
+- 前端：ProTable 表格页面、搜索表单、新建/编辑表单
+- 后端：CodeIgniter 控制器，包含完整的 CRUD API
+
+**配置方式：** 编辑 `scripts/admin.json` 或创建你自己的配置文件。
+
+#### 从数据库生成路由
+
+从数据库读取菜单数据并生成 `config/routes.ts`：
+
+```bash
+node scripts/generate-routes.js
+```
+
+**前提条件：**
+- 在 `.env` 中配置数据库连接
+- 菜单数据存储在 `system_menu` 表中
 
 #### 启动项目
 
