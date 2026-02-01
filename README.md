@@ -55,6 +55,19 @@ define('FRAMEWORKPATH', '/your/path/to/CodeIgniter');
 
 **CodeIgniter Version:** 4.6.4
 
+**Database Configuration:**
+The PHP backend reads database settings from the `.env` file:
+
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=your_password
+DB_NAME=project
+```
+
+The configuration is loaded in `php/Config/Database.php` from environment variables.
+
 #### ZH
 
 修改 `php/index.php` 第31行，指向你本地的 CodeIgniter 框架目录：
@@ -64,6 +77,19 @@ define('FRAMEWORKPATH', '/你的 CodeIgniter 路径');
 ```
 
 **CodeIgniter 版本:** 4.6.4
+
+**数据库配置：**
+PHP 后端从 `.env` 文件读取数据库配置：
+
+```env
+DB_HOST=localhost
+DB_PORT=3306
+DB_USER=root
+DB_PASSWORD=你的密码
+DB_NAME=project
+```
+
+配置文件位于 `php/Config/Database.php`，从环境变量读取配置。
 
 ---
 
