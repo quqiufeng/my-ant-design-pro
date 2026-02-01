@@ -42,3 +42,6 @@ build
 # PHP
 php/*.log
 php/writable/
+
+# Config files
+conf/*.default
