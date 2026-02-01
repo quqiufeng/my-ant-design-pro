@@ -38,3 +38,6 @@ screenshot
 .firebase
 
 build
+
+# PHP backend (symlink, not committed)
+php
