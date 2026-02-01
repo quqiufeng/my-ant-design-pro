@@ -13,6 +13,35 @@ This project is initialized with [Ant Design Pro](https://pro.ant.design). Follo
    mysql -u用户名 -p密码 project < sql/project.sql
    ```
 
+## Server Configuration
+
+### PHP Configuration
+
+Modify `php/index.php` line 31 to point to your local CodeIgniter framework:
+
+```php
+define('FRAMEWORKPATH', '/your/path/to/CodeIgniter');
+```
+
+**CodeIgniter Version:** 4.6.4
+
+### Nginx Configuration
+
+Modify `conf/nginx/myapp.conf` line 5 to set the web root directory:
+
+```nginx
+root /path/to/my-ant-design-pro/php;
+```
+
+Also update log paths (lines 8-9):
+
+```nginx
+access_log /path/to/my-ant-design-pro/php/access.log;
+error_log /path/to/my-ant-design-pro/php/error.log;
+```
+
+**PHP Version Required:** 8.1+ (Tested with 8.5.2)
+
 ## Environment Prepare
 
 Install `node_modules`:
