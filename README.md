@@ -17,119 +17,23 @@ This project is initialized with [Ant Design Pro](https://pro.ant.design). Follo
 
 ---
 
-## Database Setup / 数据库设置
+## Backend / 后端
 
 ### EN
 
-1. Copy `.env.example` to `.env`
-2. Fill in your database credentials in `.env`:
-   - `DB_USER`: Database username
-   - `DB_PASSWORD`: Database password
-3. Import the SQL file to create tables:
-   ```bash
-   mysql -uUsername -pPassword project < sql/project.sql
-   ```
+This project uses **OpenResty (Nginx + Lua)** for the backend API. No PHP required.
+
+**API Server:** `api.test.cn` (port 80)
+- Lua scripts location: `/data/lua/web/`
+- OpenResty location: `/var/www/web/my-openresty/`
 
 ### ZH
 
-1. 复制 `.env.example` 为 `.env`
-2. 在 `.env` 中填写数据库配置：
-   - `DB_USER`: 数据库用户名
-   - `DB_PASSWORD`: 数据库密码
-3. 导入 SQL 文件创建数据表：
-   ```bash
-   mysql -u用户名 -p密码 project < sql/project.sql
-   ```
+本项目后端使用 **OpenResty (Nginx + Lua)** 实现，无需 PHP。
 
----
-
-## Server Configuration / 服务器配置
-
-### PHP Configuration / PHP 配置
-
-#### EN
-
-Modify `php/index.php` line 31 to point to your local CodeIgniter framework:
-
-```php
-define('FRAMEWORKPATH', '/your/path/to/CodeIgniter');
-```
-
-**CodeIgniter Version:** 4.6.4
-
-**Database Configuration:**
-The PHP backend reads database settings from the `.env` file:
-
-```env
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=project
-```
-
-The configuration is loaded in `php/Config/Database.php` from environment variables.
-
-#### ZH
-
-修改 `php/index.php` 第31行，指向你本地的 CodeIgniter 框架目录：
-
-```php
-define('FRAMEWORKPATH', '/你的 CodeIgniter 路径');
-```
-
-**CodeIgniter 版本:** 4.6.4
-
-**数据库配置：**
-PHP 后端从 `.env` 文件读取数据库配置：
-
-```env
-DB_HOST=localhost
-DB_PORT=3306
-DB_USER=root
-DB_PASSWORD=你的密码
-DB_NAME=project
-```
-
-配置文件位于 `php/Config/Database.php`，从环境变量读取配置。
-
----
-
-### Nginx Configuration / Nginx 配置
-
-#### EN
-
-Modify `conf/nginx/myapp.conf` line 5 to set the web root directory:
-
-```nginx
-root /path/to/my-ant-design-pro/php;
-```
-
-Also update log paths (lines 8-9):
-
-```nginx
-access_log /path/to/my-ant-design-pro/php/access.log;
-error_log /path/to/my-ant-design-pro/php/error.log;
-```
-
-**PHP Version Required:** 8.1+ (Tested with 8.5.2)
-
-#### ZH
-
-修改 `conf/nginx/myapp.conf` 第5行，设置 web 根目录：
-
-```nginx
-root /你的路径/my-ant-design-pro/php;
-```
-
-同时更新日志路径（第8-9行）：
-
-```nginx
-access_log /你的路径/my-ant-design-pro/php/access.log;
-error_log /你的路径/my-ant-design-pro/php/error.log;
-```
-
-**PHP 版本要求:** 8.1+ (已测试 8.5.2)
+**API 服务器:** `api.test.cn` (端口 80)
+- Lua 脚本位置: `/data/lua/web/`
+- OpenResty 位置: `/var/www/web/my-openresty/`
 
 ---
 
@@ -172,20 +76,6 @@ yarn
 Ant Design Pro provides some useful script to help you quick start and build with web project, code style check and test.
 
 Scripts provided in `package.json`. It's safe to modify or add additional script:
-
-#### Generate CRUD Code
-
-Generate Ant Design Pro table pages with backend API from database schema:
-
-```bash
-node scripts/generate-crud.js
-```
-
-This script generates:
-- Frontend: ProTable page, search form, create/update forms
-- Backend: CodeIgniter controller with CRUD API
-
-**Configuration:** Edit `scripts/admin.json` or create your own config file.
 
 #### Generate Routes from Database
 
@@ -234,20 +124,6 @@ npm test
 Ant Design Pro 提供了一些有用的脚本，帮助你快速启动、构建项目，检查代码风格和运行测试。
 
 脚本定义在 `package.json` 中，可以安全地修改或添加自定义脚本：
-
-#### 生成 CRUD 代码
-
-根据数据库表结构自动生成 Ant Design Pro 表格页面和后端 API：
-
-```bash
-node scripts/generate-crud.js
-```
-
-此脚本会生成：
-- 前端：ProTable 表格页面、搜索表单、新建/编辑表单
-- 后端：CodeIgniter 控制器，包含完整的 CRUD API
-
-**配置方式：** 编辑 `scripts/admin.json` 或创建你自己的配置文件。
 
 #### 从数据库生成路由
 
@@ -302,4 +178,14 @@ You can view full document on our [official website](https://pro.ant.design). An
 ### ZH
 
 你可以在[官网](https://pro.ant.design)查看完整文档。也欢迎在 [GitHub](https://github.com/ant-design/ant-design-pro) 给我们反馈。
+
+---
+
+## Changelog / 更新日志
+
+### 2024-02-04
+- Removed PHP/CodeIgniter backend
+- Migrated to OpenResty (Nginx + Lua) for API
+- Deleted php/, sql/, sync-php.sh directories and files
+- Updated nginx.conf to remove PHP-FPM configurations
 test hook
