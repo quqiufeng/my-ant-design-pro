@@ -12,7 +12,7 @@
 export default {
   dev: {
     '/api/': {
-      target: 'http://192.168.124.10',
+      target: 'http://192.168.124.10:8080',
       changeOrigin: true,
     },
   },
